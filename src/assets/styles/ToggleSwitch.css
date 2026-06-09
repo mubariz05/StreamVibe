@@ -1,0 +1,27 @@
+.toggle-switch {
+    display: flex;
+    align-items: center;
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 6px;
+    gap: 4px;
+}
+
+.toggle-btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.toggle-btn.active {
+    background-color: #2A2A2A;
+    color: #ffffff;
+}

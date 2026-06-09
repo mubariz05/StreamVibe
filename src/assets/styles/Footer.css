@@ -1,0 +1,132 @@
+.footer {
+    background-color: #0F0F0F;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerListContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 40px 24px;
+    padding-bottom: 48px;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.footerListContainer h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin: 0 0 16px;
+}
+
+.footerLink {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-link {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.socialIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s ease;
+}
+
+.socialIcon:hover {
+    border-color: #ffffff;
+}
+
+.socialIcon img {
+    width: 16px;
+    height: 16px;
+    filter: brightness(0.6);
+    transition: filter 0.2s ease;
+}
+
+.socialIcon:hover img {
+    filter: brightness(1);
+}
+
+.footerBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+.footerBottom span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.footerPolicy {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footerPolicy span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding-right: 10px;
+    border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.footerPolicy span:last-child {
+    border: none;
+}
+
+.footerPolicy span:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 48px 24px 32px;
+    }
+
+    .footerListContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footerListContainer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footerBottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
