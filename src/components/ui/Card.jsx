@@ -84,7 +84,10 @@ const Card = () => {
               ))}
             </div>
             <div className="category-footer">
-              <span>{cat.name}</span>
+              <div className="category-footer-left">
+                <span className="category-badge">Top 10 In</span>
+                <span>{cat.name}</span>
+              </div>
               <span className="category-arrow">
                 <img src="/icons/arrow-right.svg" alt="right" />
               </span>

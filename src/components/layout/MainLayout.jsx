@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
+import CTASection from "../home/CTASection";
 
 const MainLayout = () => {
   return (
@@ -8,6 +9,7 @@ const MainLayout = () => {
       <Header />
       <main>
         <Outlet />
+        <CTASection />
       </main>
       <Footer />
     </div>

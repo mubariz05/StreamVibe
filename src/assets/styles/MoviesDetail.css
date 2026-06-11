@@ -1,0 +1,314 @@
+/* MoviesDetail.css */
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    margin-top: 24px;
+    padding-bottom: 40px;
+}
+
+.detail-left,
+.detail-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Card */
+.detail-card {
+    background: rgba(26, 26, 26, 1);
+    border-radius: 12px;
+    padding: 50px;
+    border: 1px solid rgba(38, 38, 38, 1);
+}
+
+.detail-card__label {
+    font-size: 18px;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.detail-card__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #888;
+}
+
+.detail-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.detail-card__text {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+/* Cast */
+.cast-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.cast-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.cast-item {
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.cast-img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cast-name {
+    font-size: 11px;
+    color: #bbb;
+    margin-top: 6px;
+    width: 72px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Reviews */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.review-card {
+    background: rgba(15, 15, 15, 1);
+    border: 1px solid rgba(38, 38, 38, 1);
+    border-radius: 12px;
+    padding: 40px;
+}
+
+.review-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-content h3 {
+    font-size: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+.review-card__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.review-card__name {
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.review-card__from {
+    font-size: 11px;
+    color: #888;
+}
+
+.review-card__text {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Add review btn */
+.add-review-btn {
+    border: 1px solid #555;
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: border-color 0.2s;
+}
+
+.add-review-btn:hover {
+    border-color: #e50914;
+    color: #e50914;
+}
+
+/* Arrows */
+.detail-card__arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-btn {
+    background: rgba(20, 20, 20, 1);
+    border: none;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.arrow-btn:hover {
+    background: #e50914;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.page-dot {
+    width: 24px;
+    height: 4px;
+    border-radius: 2px;
+    background: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.page-dot.active {
+    background: #e50914;
+    width: 32px;
+}
+
+/* Right panel */
+.detail-year {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.tag {
+    background: rgba(20, 20, 20, 1);
+    border: 1px solid #444;
+    color: #ccc;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.ratings-row {
+    display: grid;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+
+.rating-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(20, 20, 20, 1);
+    border: 1px solid rgba(38, 38, 38, 1);
+    align-items: flex-start;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.rating-platform {
+    font-size: 14px;
+    /* ← 12px-dən böyüt */
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0;
+    /* ← gap işləyir, margin lazım deyil */
+}
+
+/* Star rating - pill görünüşü üçün inline-flex */
+.star-rating {
+    display: inline-flex;
+    /* ← əlavə et */
+    align-items: center;
+    /* ← əlavə et */
+    background-color: rgba(20, 20, 20, 1);
+    border: 1px solid rgba(38, 38, 38, 1);
+    color: #e50914;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 51px;
+
+}
+
+.star-value {
+    font-size: 14px;
+    margin-left: 8px;
+    color: rgba(153, 153, 153, 1);
+}
+
+/* Person card */
+.person-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20, 20, 20, 1);
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.person-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.person-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.person-from {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Not found */
+.not-found {
+    text-align: center;
+    padding: 60px;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+}

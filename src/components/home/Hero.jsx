@@ -21,7 +21,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Logo — şəkillərin ortasında */}
       <div className="hero__logo">
         <img className="media-img" src="/img/media-btn.svg" alt="media" />
       </div>

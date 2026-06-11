@@ -1,4 +1,3 @@
-import CTASection from "../../components/home/CTASection";
 import DevicesSection from "../../components/home/DevicesSection";
 import FaqSection from "../../components/home/FaqSection";
 import HeroSection from "../../components/home/Hero";
@@ -13,7 +12,6 @@ const HomePage = () => {
       <DevicesSection />
       <FaqSection />
       <PriceSection />
-      <CTASection />
     </div>
   );
 };

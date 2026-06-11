@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "../../assets/styles/Header.css";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -15,25 +17,29 @@ const Header = () => {
 
       <nav className={`header__nav${menuOpen ? " header__nav--open" : ""}`}>
         <ul className="header__nav-list">
-          <li className="header__nav-item active">
-            <a href="#" onClick={() => setMenuOpen(false)}>
+          <li
+            className={`header__nav-item${location.pathname === "/" ? " active" : ""}`}
+          >
+            <Link to="/" onClick={() => setMenuOpen(false)}>
               Home
-            </a>
+            </Link>
           </li>
-          <li className="header__nav-item">
-            <a href="#" onClick={() => setMenuOpen(false)}>
+          <li
+            className={`header__nav-item${location.pathname === "/movies" ? " active" : ""}`}
+          >
+            <Link to="/movies" onClick={() => setMenuOpen(false)}>
               Movies &amp; Shows
-            </a>
+            </Link>
           </li>
           <li className="header__nav-item">
-            <a href="#" onClick={() => setMenuOpen(false)}>
+            <Link to="#" onClick={() => setMenuOpen(false)}>
               Support
-            </a>
+            </Link>
           </li>
           <li className="header__nav-item">
-            <a href="#" onClick={() => setMenuOpen(false)}>
+            <Link to="#" onClick={() => setMenuOpen(false)}>
               Subscriptions
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
