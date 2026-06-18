@@ -3,6 +3,8 @@ import HomePage from "./src/pages/Home";
 import MainLayout from "./src/components/layout/MainLayout";
 import MoviesDetail from "./src/pages/MoviesDetail";
 import Movies from "./src/pages/Movies";
+import SupportPage from "./src/pages/Support";
+import SubscriptionsPage from "./src/pages/Subscriptions";
 
 export const routes = createBrowserRouter([
   {
@@ -20,6 +22,14 @@ export const routes = createBrowserRouter([
       {
         path: "movies/:id",
         element: <MoviesDetail />,
+      },
+      {
+        path: "/support",
+        element: <SupportPage />,
+      },
+      {
+        path: "/subscriptions",
+        element: <SubscriptionsPage />,
       },
     ],
   },

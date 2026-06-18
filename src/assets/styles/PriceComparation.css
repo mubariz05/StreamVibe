@@ -1,0 +1,147 @@
+.price-comparison {
+    padding: 60px 48px;
+    color: #fff;
+    max-width: 100%;
+    margin: 0 162px;
+}
+
+.price-comparison__header {
+    margin-bottom: 40px;
+}
+
+.price-comparison__title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+    max-width: 600px;
+    line-height: 1.2;
+}
+
+.price-comparison__desc {
+    font-size: 13px;
+    color: #aaaaaa;
+    max-width: 620px;
+    line-height: 1.6;
+}
+
+.comparison-table {
+    border: 1px solid #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    border-bottom: 1px solid #1a1a1a;
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-row--head {
+    background: #141414;
+}
+
+.comparison-cell {
+    padding: 18px 20px;
+    font-size: 13px;
+    color: #aaaaaa;
+    border-right: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comparison-cell:last-child {
+    border-right: none;
+}
+
+.comparison-cell--label {
+    color: #cccccc;
+    font-weight: 500;
+}
+
+.comparison-cell--plan {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.popular-badge {
+    background: #E50914;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1280px) {
+    .price-comparison {
+        margin: 0 80px;
+        padding: 60px 32px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .price-comparison {
+        margin: 0 40px;
+        padding: 48px 24px;
+    }
+
+    .comparison-row {
+        grid-template-columns: 160px 1fr 1fr 1fr;
+    }
+
+    .price-comparison__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .price-comparison {
+        margin: 0 24px;
+        padding: 40px 16px;
+    }
+
+    .price-comparison__title {
+        font-size: 24px;
+    }
+
+    .comparison-row {
+        grid-template-columns: 120px 1fr 1fr 1fr;
+    }
+
+    .comparison-cell {
+        padding: 14px 10px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .price-comparison {
+        margin: 0 16px;
+        padding: 32px 12px;
+    }
+
+    .price-comparison__title {
+        font-size: 20px;
+    }
+
+    .comparison-row {
+        grid-template-columns: 90px 1fr 1fr 1fr;
+    }
+
+    .comparison-cell {
+        padding: 12px 8px;
+        font-size: 10px;
+    }
+
+    .popular-badge {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+}

@@ -1,29 +1,25 @@
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../../assets/styles/MoviesHero.css";
-
-const slides = [
-  {
-    img: "/img/movie-hero.png",
-    title: "Avengers : Endgame",
-    desc: "With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face… Avenge the fallen.",
-  },
-  {
-    img: "/img/movie-hero2.png", // {data.img}
-    title: "Avengers : Endgame", //  {data.title}
-    desc: "With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face… Avenge the fallen.", // {data.desc}
-  },
-  {
-    img: "/img/movie-hero3.png",
-    title: "Avengers : Endgame", //  {data.title}
-    desc: "With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face… Avenge the fallen.", // {data.desc}
-  },
-];
+import request from "../../api/Api";
 
 const MoviesHero = () => {
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const data = await request("movie/popular?language=en-US&page=1");
+      if (data) {
+        setSlides(data.results.slice(0, 5));
+      }
+    };
+    fetchMovies();
+  }, []);
+
   return (
     <div className="movies-hero">
       <Swiper
@@ -35,18 +31,18 @@ const MoviesHero = () => {
         modules={[Pagination, Navigation, Autoplay]}
         className="movies-hero__swiper"
       >
-        {slides.map((slide, i) => (
-          <SwiperSlide key={i}>
+        {slides.map((movie) => (
+          <SwiperSlide key={movie.id}>
             <div className="movies-hero__slide">
               <img
-                src={slide.img}
-                alt={slide.title}
+                src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                alt={movie.title}
                 className="movies-hero__img"
               />
               <div className="movies-hero__overlay" />
               <div className="movies-hero__content">
-                <h2 className="movies-hero__title">{slide.title}</h2>
-                <p className="movies-hero__desc">{slide.desc}</p>
+                <h2 className="movies-hero__title">{movie.title}</h2>
+                <p className="movies-hero__desc">{movie.overview}</p>
                 <div className="movies-hero__actions">
                   <button className="hero__btn">
                     <span className="hero__btn-icon">

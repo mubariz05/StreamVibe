@@ -118,6 +118,134 @@
     display: block;
 }
 
-@media (max-width: 1440px) {}
+@media (max-width: 1440px) {
+    .hero__logo .media-img {
+        width: 400px;
+    }
 
-@media (max-width: 768px) {}
+    .hero__logo {
+        top: 170px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero__logo .media-img {
+        width: 340px;
+    }
+
+    .hero__logo {
+        top: 150px;
+    }
+
+    .hero__content {
+        padding: 40px 32px 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: -56px;
+    }
+
+    .hero__rows {
+        gap: 12px;
+    }
+
+    .hero__gradient-top {
+        height: 120px;
+    }
+
+    .hero__gradient-bottom {
+        height: 70%;
+    }
+
+    .hero__logo {
+        top: 110px;
+    }
+
+    .hero__logo .media-img {
+        width: 260px;
+    }
+
+    .hero__content {
+        padding: 32px 20px 44px;
+    }
+
+    .hero__subtitle {
+        max-width: 480px;
+    }
+
+    .hero__btn {
+        padding: 12px 26px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        margin-top: -48px;
+    }
+
+    .hero__rows {
+        gap: 8px;
+    }
+
+    .hero__gradient-top {
+        height: 100px;
+    }
+
+    .hero__gradient-bottom {
+        height: 75%;
+        background: linear-gradient(to top,
+                #0f0f0f 0%,
+                rgba(15, 15, 15, 0.75) 45%,
+                transparent 100%);
+    }
+
+    .hero__logo {
+        top: 80px;
+    }
+
+    .hero__logo .media-img {
+        width: 200px;
+    }
+
+    .hero__content {
+        padding: 24px 16px 40px;
+    }
+
+    .hero__title {
+        margin-bottom: 12px;
+    }
+
+    .hero__subtitle {
+        font-size: 13px;
+        margin-bottom: 22px;
+        line-height: 1.65;
+    }
+
+    .hero__btn {
+        padding: 11px 22px;
+        font-size: 14px;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero__logo .media-img {
+        width: 170px;
+    }
+
+    .hero__logo {
+        top: 70px;
+    }
+
+    .hero__content {
+        padding: 20px 14px 36px;
+    }
+
+    .hero__btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

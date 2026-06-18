@@ -1,54 +1,37 @@
+import { useState, useEffect } from "react";
+import request from "../../api/Api";
 import "../../assets/styles/Card.css";
 
-const categories = [
-  {
-    name: "Action",
-    images: [
-      "/img/card1.png",
-      "/img/card2.png",
-      "/img/card3.png",
-      "/img/card4.png",
-    ],
-  },
-  {
-    name: "Adventure",
-    images: [
-      "/img/card1.png",
-      "/img/card2.png",
-      "/img/card3.png",
-      "/img/card4.png",
-    ],
-  },
-  {
-    name: "Comedy",
-    images: [
-      "/img/card1.png",
-      "/img/card2.png",
-      "/img/card3.png",
-      "/img/card4.png",
-    ],
-  },
-  {
-    name: "Drama",
-    images: [
-      "/img/card1.png",
-      "/img/card2.png",
-      "/img/card3.png",
-      "/img/card4.png",
-    ],
-  },
-  {
-    name: "Horror",
-    images: [
-      "/img/card1.png",
-      "/img/card2.png",
-      "/img/card3.png",
-      "/img/card4.png",
-    ],
-  },
-];
-
 const Card = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchGenres = async () => {
+      const data = await request("genre/movie/list?language=en-US");
+      if (!data) return;
+
+      const genres = data.genres.slice(0, 5);
+
+      const genresWithImages = await Promise.all(
+        genres.map(async (genre) => {
+          const movies = await request(
+            `discover/movie?with_genres=${genre.id}&language=en-US&page=1`,
+          );
+          const images = movies
+            ? movies.results
+                .slice(0, 4)
+                .map((m) => `https://image.tmdb.org/t/p/w300${m.poster_path}`)
+            : [];
+          return { name: genre.name, images };
+        }),
+      );
+
+      setCategories(genresWithImages);
+    };
+
+    fetchGenres();
+  }, []);
+
   return (
     <div className="card-section">
       <div className="card-header">

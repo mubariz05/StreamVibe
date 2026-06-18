@@ -31,13 +31,17 @@ const Header = () => {
               Movies &amp; Shows
             </Link>
           </li>
-          <li className="header__nav-item">
-            <Link to="#" onClick={() => setMenuOpen(false)}>
+          <li
+            className={`header__nav-item${location.pathname === "/support" ? " active" : ""}`}
+          >
+            <Link to="/support" onClick={() => setMenuOpen(false)}>
               Support
             </Link>
           </li>
-          <li className="header__nav-item">
-            <Link to="#" onClick={() => setMenuOpen(false)}>
+          <li
+            className={`header__nav-item${location.pathname === "/subscriptions" ? " active" : ""}`}
+          >
+            <Link to="/subscriptions" onClick={() => setMenuOpen(false)}>
               Subscriptions
             </Link>
           </li>

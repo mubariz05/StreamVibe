@@ -13,6 +13,11 @@ const HeroSection = () => {
         <div className="hero__row">
           <img src="/img/Image2.png" alt="images-2" />
         </div>
+
+        <div className="hero__logo">
+          <img className="media-img" src="/img/media-btn.svg" alt="media" />
+        </div>
+
         <div className="hero__row">
           <img src="/img/Image3.png" alt="images-3" />
         </div>
@@ -21,14 +26,8 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <div className="hero__logo">
-        <img className="media-img" src="/img/media-btn.svg" alt="media" />
-      </div>
-
       <div className="hero__content">
-        <div className="container">
-          <h1 className="hero__title">The Best Streaming Experience</h1>
-        </div>
+        <h1 className="hero__title">The Best Streaming Experience</h1>
         <p className="hero__subtitle">
           StreamVibe is the best streaming experience for watching your favorite
           movies and shows on demand, anytime, anywhere. With StreamVibe, you
