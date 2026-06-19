@@ -71,7 +71,6 @@
     margin: 0;
 }
 
-/* ── 1024px ── */
 @media (max-width: 1024px) {
     .cta-wrapper {
         padding: 100px 60px;
@@ -121,7 +120,6 @@
     }
 }
 
-/* ── 480px ── */
 @media (max-width: 480px) {
     .cta-wrapper {
         padding: 60px 16px;

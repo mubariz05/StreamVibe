@@ -105,7 +105,6 @@
     height: 36px;
 }
 
-/* ── Burger Button ── */
 .header__burger {
     display: none;
     flex-direction: column;
@@ -132,7 +131,6 @@
     transform-origin: center;
 }
 
-/* X animasyonu */
 .header__burger--open span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -146,7 +144,6 @@
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ── Responsive ── */
 @media (max-width: 768px) {
     .header {
         padding: 0 16px;

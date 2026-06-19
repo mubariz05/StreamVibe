@@ -188,14 +188,12 @@
     transform: translateX(4px);
 }
 
-/* ── 1280px: margin azalt ── */
 @media (max-width: 1280px) {
     .card-section {
         margin: 0 80px;
     }
 }
 
-/* ── 1024px: margin sıfırla, padding azalt ── */
 @media (max-width: 1024px) {
     .card-section {
         margin: 0;
@@ -207,7 +205,6 @@
     }
 }
 
-/* ── 768px: 3 kart görünsün, header alt-alta düşsün ── */
 @media (max-width: 768px) {
     .card-section {
         padding: 40px 20px;
@@ -263,7 +260,6 @@
     }
 }
 
-/* ── 480px: daha dar kartlar ── */
 @media (max-width: 480px) {
     .card-section {
         padding: 32px 16px;

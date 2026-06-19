@@ -3,26 +3,27 @@ import "../../assets/styles/Hero.css";
 const HeroSection = () => {
   return (
     <section className="hero">
-      <div className="hero__gradient-top" />
-      <div className="hero__gradient-bottom" />
+      <div className="hero__media">
+        <div className="hero__gradient-top" />
+        <div className="hero__gradient-bottom" />
 
-      <div className="hero__rows">
-        <div className="hero__row">
-          <img src="/img/Image1.png" alt="images-1" />
-        </div>
-        <div className="hero__row">
-          <img src="/img/Image2.png" alt="images-2" />
+        <div className="hero__rows">
+          <div className="hero__row">
+            <img src="/img/Image1.png" alt="images-1" />
+          </div>
+          <div className="hero__row">
+            <img src="/img/Image2.png" alt="images-2" />
+          </div>
+          <div className="hero__row">
+            <img src="/img/Image3.png" alt="images-3" />
+          </div>
+          <div className="hero__row">
+            <img src="/img/Image4.png" alt="images-4" />
+          </div>
         </div>
 
         <div className="hero__logo">
           <img className="media-img" src="/img/media-btn.svg" alt="media" />
-        </div>
-
-        <div className="hero__row">
-          <img src="/img/Image3.png" alt="images-3" />
-        </div>
-        <div className="hero__row">
-          <img src="/img/Image4.png" alt="images-4" />
         </div>
       </div>
 

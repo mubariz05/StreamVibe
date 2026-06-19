@@ -6,7 +6,6 @@
     background: #0F0F0F;
 }
 
-/* Row header */
 .movie-row__header {
     display: flex;
     align-items: center;
@@ -21,7 +20,6 @@
     margin: 0;
 }
 
-/* Controls — card.css-dəki .ctrl-btn, .dot var, lazım olarsa import et */
 .row-controls {
     display: flex;
     align-items: center;
@@ -51,7 +49,6 @@
     margin-top: 12px;
 }
 
-/* ── Trending Card ── */
 .trending-card {
     flex: 0 0 calc(20% - 13px);
     scroll-snap-align: start;
@@ -101,7 +98,6 @@
     opacity: 0.5;
 }
 
-/* ── Must Watch Card ── */
 .mustwatch-card {
     flex: 0 0 calc(25% - 12px);
     scroll-snap-align: start;
@@ -165,7 +161,6 @@
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Responsive */
 @media (max-width: 1280px) {
     .movie-rows-wrapper {
         padding: 48px 80px;
