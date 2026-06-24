@@ -1,10 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "../../assets/styles/Header.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { auth } from "../../firebase";
 
-const Header = () => {
+const Header = ({ onLoginClick }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const userMenuRef = useRef(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return unsubscribe;
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(e.target)) {
+        setUserMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setUserMenuOpen(false);
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const initial = (user?.displayName || user?.email || "?")
+    .charAt(0)
+    .toUpperCase();
 
   return (
     <header className="header">
@@ -55,6 +92,54 @@ const Header = () => {
         <button className="header__icon-btn" aria-label="Notifications">
           <img src="/icons/notification.svg" alt="notification" />
         </button>
+
+        {user ? (
+          <div className="header__user" ref={userMenuRef}>
+            <button
+              className="header__user-btn"
+              aria-label="Account menu"
+              onClick={() => setUserMenuOpen((prev) => !prev)}
+            >
+              <span className="header__user-avatar">{initial}</span>
+              <span className="header__user-name">
+                {user.displayName || user.email}
+              </span>
+              <img
+                src="/icons/chevron-down.svg"
+                alt=""
+                className={`header__user-chevron${
+                  userMenuOpen ? " header__user-chevron--open" : ""
+                }`}
+              />
+            </button>
+
+            {userMenuOpen && (
+              <div className="header__user-dropdown">
+                <Link
+                  to="/subscriptions"
+                  className="header__user-dropdown-item"
+                  onClick={() => setUserMenuOpen(false)}
+                >
+                  Subscriptions
+                </Link>
+                <button
+                  className="header__user-dropdown-item header__user-dropdown-item--danger"
+                  onClick={handleLogout}
+                >
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
+          <button
+            className="header__icon-btn"
+            aria-label="Login"
+            onClick={onLoginClick}
+          >
+            <img src="/icons/user.svg" alt="user" />
+          </button>
+        )}
 
         <button
           className={`header__burger${menuOpen ? " header__burger--open" : ""}`}

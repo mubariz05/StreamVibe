@@ -144,6 +144,109 @@
     transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ===== User avatar + dropdown ===== */
+
+.header__user {
+    position: relative;
+}
+
+.header__user-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 40px;
+    padding: 4px 10px 4px 4px;
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.header__user-btn:hover {
+    background: #1A1A1A;
+}
+
+.header__user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #4ade80;
+    color: #0f0f1a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.header__user-name {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.header__user-chevron {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.header__user-chevron--open {
+    transform: rotate(180deg);
+}
+
+.header__user-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    background: #0F0F0F;
+    border: 1px solid #1F1F1F;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    z-index: 1100;
+}
+
+.header__user-dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 9px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.header__user-dropdown-item:hover {
+    color: #ffffff;
+    background: #1A1A1A;
+}
+
+.header__user-dropdown-item--danger {
+    color: #f87171;
+}
+
+.header__user-dropdown-item--danger:hover {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+}
+
 @media (max-width: 768px) {
     .header {
         padding: 0 16px;
@@ -161,6 +264,14 @@
 
     .header__logo-text {
         font-size: 18px;
+    }
+
+    .header__user-name {
+        display: none;
+    }
+
+    .header__user-chevron {
+        display: none;
     }
 }
 

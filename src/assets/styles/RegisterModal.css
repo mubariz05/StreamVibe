@@ -1,0 +1,113 @@
+.auth-subtitle {
+    color: #64748b;
+    font-size: 13px;
+    margin-top: 6px;
+    margin-bottom: 22px;
+}
+
+.auth-field {
+    margin-bottom: 14px;
+}
+
+.auth-field-confirm {
+    margin-bottom: 16px;
+}
+
+.field-error {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.checkbox-box {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 4px;
+    margin-top: 1px;
+    border: 2px solid #2d2d4e;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.checkbox-box.active {
+    border-color: #4ade80;
+    background: #4ade80;
+}
+
+.checkbox-box.checkbox-error {
+    border-color: #e53e3e;
+}
+
+.checkbox-text {
+    color: #94a3b8;
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+.checkbox-text a {
+    color: #f1f5f9;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.checkbox-text a:hover {
+    color: #4ade80;
+}
+
+.auth-input:focus {
+    border-color: #4ade80;
+}
+
+.auth-input.error:focus {
+    border-color: #e53e3e;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    border: none;
+    color: #0f0f1a;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+    letter-spacing: 0.1px;
+}
+
+.auth-submit-btn:hover {
+    opacity: 0.9;
+}
+
+.auth-switch-text {
+    text-align: center;
+    margin-top: 20px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.auth-switch-btn {
+    background: none;
+    border: none;
+    color: #4ade80;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 0;
+}
