@@ -1,5 +1,6 @@
 .support-wrapper {
     margin: 0 162px;
+    padding: 60px 48px;
 }
 
 .support-page {
@@ -206,6 +207,59 @@
     border: 1px solid #4d1a1a;
 }
 
+.error-text {
+    color: #e53e3e;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.input-error {
+    border-color: #e53e3e !important;
+}
+
+.form-link {
+    color: #e53e3e;
+    text-decoration: underline;
+}
+
+.flag-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 0 10px;
+    border-right: 1px solid #444;
+}
+
+.country-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 999;
+    background: #2a2a3d;
+    border: 1px solid #444;
+    border-radius: 8px;
+    list-style: none;
+    padding: 4px 0;
+    margin: 0;
+    min-width: 210px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.country-option {
+    padding: 5px;
+}
+
+.country-option span {
+    padding-right: 2px;
+    color: white;
+}
 
 @media (max-width: 1280px) {
     .support-wrapper {
@@ -216,6 +270,7 @@
 @media (max-width: 1024px) {
     .support-wrapper {
         margin: 0 40px;
+        padding: 60px 32px;
     }
 
     .support-page {
@@ -231,6 +286,7 @@
 @media (max-width: 768px) {
     .support-wrapper {
         margin: 0 24px;
+        padding: 48px 24px;
     }
 
     .support-page {
@@ -265,6 +321,7 @@
 @media (max-width: 480px) {
     .support-wrapper {
         margin: 0 16px;
+        padding: 40px 16px;
     }
 
     .support-left__posters {

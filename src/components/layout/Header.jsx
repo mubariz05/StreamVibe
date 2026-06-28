@@ -116,6 +116,13 @@ const Header = ({ onLoginClick }) => {
             {userMenuOpen && (
               <div className="header__user-dropdown">
                 <Link
+                  to="/profile"
+                  className="header__user-dropdown-item"
+                  onClick={() => setUserMenuOpen(false)}
+                >
+                  My Profile
+                </Link>
+                <Link
                   to="/subscriptions"
                   className="header__user-dropdown-item"
                   onClick={() => setUserMenuOpen(false)}

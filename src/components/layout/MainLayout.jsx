@@ -6,6 +6,7 @@ import { useAuthModal } from "../../hooks/useAuthModal";
 import { AuthModal } from "../auth/AuthModal";
 import { LoginModal } from "../auth/LoginModal";
 import { RegisterModal } from "../auth/RegisterModal";
+import { NavbarUserMenu } from "../layout/NavbarUserMenu";
 import { Toaster } from "react-hot-toast";
 
 const MainLayout = () => {
@@ -31,7 +32,11 @@ const MainLayout = () => {
           },
         }}
       />
-      <Header onLoginClick={openLogin} />
+      <Header
+        onLoginClick={openLogin}
+        userMenu={<NavbarUserMenu onLoginClick={openLogin} />}
+      />
+
       <main>
         <Outlet />
         <CTASection />
