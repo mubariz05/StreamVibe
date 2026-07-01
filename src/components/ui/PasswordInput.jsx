@@ -1,7 +1,14 @@
 import { useState } from "react";
 import "../../assets/styles/PasswordInput.css";
 
-export function PasswordInput({ id, placeholder, value, onChange, error }) {
+export function PasswordInput({
+  id,
+  placeholder,
+  value,
+  onChange,
+  error,
+  ...inputProps
+}) {
   const [show, setShow] = useState(false);
 
   return (
@@ -19,6 +26,7 @@ export function PasswordInput({ id, placeholder, value, onChange, error }) {
         onBlur={(e) => {
           e.target.style.borderColor = error ? "#e53e3e" : "#2d2d4e";
         }}
+        {...inputProps}
       />
       <button
         type="button"

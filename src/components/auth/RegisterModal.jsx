@@ -96,8 +96,10 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
   };
 
   return (
-    <div>
-      <p className="auth-subtitle">Register to enjoy the features</p>
+    <div data-testid="register-modal">
+      <p className="auth-subtitle" data-testid="register-subtitle">
+        Register to enjoy the features
+      </p>
 
       <div className="auth-field">
         <label className="auth-label" htmlFor="reg-username">
@@ -110,6 +112,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
           value={fields.username}
           onChange={set("username")}
           className={`auth-input ${errors.username ? "error" : ""}`}
+          data-testid="register-username"
         />
         <FieldError msg={errors.username} />
       </div>
@@ -125,6 +128,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
           value={fields.email}
           className={`auth-input ${errors.email ? "error" : ""}`}
           onChange={set("email")}
+          data-testid="register-email"
         />
         <FieldError msg={errors.email} />
       </div>
@@ -139,6 +143,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
           value={fields.password}
           onChange={set("password")}
           error={!!errors.password}
+          data-testid="register-password"
         />
         <FieldError msg={errors.password} />
       </div>
@@ -153,6 +158,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
           value={fields.confirm}
           onChange={set("confirm")}
           error={!!errors.confirm}
+          data-testid="register-confirm-password"
         />
         <FieldError msg={errors.confirm} />
       </div>
@@ -164,6 +170,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
             className={`checkbox-box ${fields.agreed ? "active" : ""} ${
               errors.agreed ? "checkbox-error" : ""
             }`}
+            data-testid="register-terms-checkbox"
           >
             {fields.agreed && (
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none">
@@ -185,7 +192,12 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
         <FieldError msg={errors.agreed} />
       </div>
 
-      <button type="button" onClick={handleSubmit} className="auth-submit-btn">
+      <button
+        type="button"
+        onClick={handleSubmit}
+        className="auth-submit-btn"
+        data-testid="register-submit"
+      >
         Continue
       </button>
 
