@@ -3,8 +3,9 @@ import { PasswordInput } from "../ui/PasswordInput";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import toast from "react-hot-toast";
 
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import "../../assets/styles/RegisterModal.css";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 
 const FieldError = ({ msg }) =>
   msg ? <p className="field-error">{msg}</p> : null;
@@ -60,6 +61,13 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
 
         await updateProfile(userCredential.user, {
           displayName: fields.username,
+        });
+
+        await setDoc(doc(db, "users", userCredential.user.uid), {
+          uid: userCredential.user.uid,
+          username: fields.username,
+          email: fields.email,
+          createdAt: serverTimestamp(),
         });
 
         toast.success(`Xoş gəldin, ${fields.username}! Qeydiyyat tamamlandı`);
@@ -170,7 +178,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
             )}
           </div>
           <span className="checkbox-text">
-            I agree to our <a href="#">Privacy Policy</a> and{" "}
+            I agree to our <a href="#">Privacy Policy</a> and
             <a href="#">Term &amp; Conditions</a>
           </span>
         </label>
@@ -182,7 +190,7 @@ export function RegisterModal({ onSwitchToLogin, onClose }) {
       </button>
 
       <p className="auth-switch-text">
-        Already have an account?{" "}
+        Already have an account?
         <button
           type="button"
           onClick={onSwitchToLogin}
